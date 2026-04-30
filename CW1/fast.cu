@@ -1,6 +1,7 @@
 #include <random>
 #include <iostream>
 
+// ToDo: Should this initialization also be done on the GPU?
 void init(int32_t size, int32_t *vec_a, int32_t *vec_b, int32_t *mat)
 {
     std::mt19937 prng(2024);
@@ -16,26 +17,6 @@ void init(int32_t size, int32_t *vec_a, int32_t *vec_b, int32_t *mat)
         mat[i] = distrib(prng);
 }
 
-void pretty_print(int32_t size, int32_t *vec_a, int32_t *vec_b, int32_t *mat)
-{
-    std::cout << "Vec A:" << std::endl;
-    for (auto i = 0; i < size; i++)
-        std::cout << vec_a[i] << std::endl;
-
-    std::cout << "Vec B:" << std::endl;
-    for (auto i = 0; i < size; i++)
-        std::cout << vec_b[i] << std::endl;
-
-    std::cout << "Matrix:" << std::endl;
-    for (auto i = 0; i < size; i++)
-    {
-        for (auto j = 0; j < size; j++)
-            std::cout << mat[i * size + j] << " ";
-
-        std::cout << std::endl;
-    }
-}
-
 int main()
 {
     int32_t size = 32768;
@@ -47,5 +28,5 @@ int main()
 
     init(size, vec_a, vec_b, mat);
 
-    pretty_print(size, vec_a, vec_b, mat);
+    std::cout << "hello" << std::endl;
 }

@@ -66,7 +66,7 @@ int main()
 
     init(size, vec_a, vec_b, mat);
 
-    // pretty_print(size, vec_a, vec_b, mat);
+    //pretty_print(size, vec_a, vec_b, mat);
 
     auto start = std::chrono::system_clock::now();
     compute(size, vec_a, vec_b, mat, out);
